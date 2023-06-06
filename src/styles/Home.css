@@ -1,4 +1,6 @@
 .homeFlexContainer {
+    width: 70%;
+    margin-left: 15%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -229,4 +231,110 @@ background: linear-gradient(to right, pink,rgb(53, 86, 100) , rgb(100, 100, 222)
     font-size: larger;
     text-align: center;
     box-shadow: 5px -5px 4px black, -5px -5px 4px black;
+}
+
+
+.rating{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+}
+
+.firstCardRating{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    width: 28%;
+    background-color: rgb(29, 29, 84);
+}
+
+
+.color{
+    color: whitesmoke;
+} 
+.fontszie{
+    font-size: 2em;
+}
+
+.fontStyle{
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logosTagfooter{
+    background-color:rgb(21, 18, 84) ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.CodingNinjasHeading, .products , .community, .socialMediaLogosContainer{   
+    color : white;
+    display: flex;
+    flex-direction: column;
+}
+
+.CodingNinjasHeading h4 , .CodingNinjasHeading p, .products h4, .products p, .community h4 , .community p{
+    padding:5px;
+    margin: 1px;
+}
+
+
+.logoCoding{
+    width: 200px;
+    height: 130px;
+    border-radius: 13px;
+   
+}
+
+.logoCodingContainer{
+    color: white;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.socialMediaLogos{
+    display: flex;
+    flex-direction: row;
+}
+
+.conatcts, .eamil{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.conatcts:hover,
+.eamil:hover ,
+.CodingNinjasHeading:hover ,  .products:hover ,  .community:hover,.socialMediaLogosContainer:hover 
+ {
+    color: rgb(192, 114, 26);
+    text-decoration: underline;
+}
+
+.ImportantLinksCotanier{
+    width: 70%;
+    margin-left: 15%;
+}
+
+a{
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(30, 27, 23);
+}
+
+
+.Links{
+    font-size: 1.12em;
+}
+
+a:hover {
+    font-size: 1.12em;
+color: rgb(224, 19, 19);
 }
