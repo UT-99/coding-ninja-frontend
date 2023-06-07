@@ -1,9 +1,16 @@
 import React from "react";
+import "../styles/Home.css";
 import Logo from "./Logo";
 import ladyLogo from "../../src/Assests/lady.jpg";
-import "../styles/Home.css";
 import logoCoding from "../../src/Assests/coding-ninjas-logo.jpg";
+import DynamicRoutesHomePage from "./DynamicRoutesHomePage";
+import NavbarHomePage from "./NavbarHomePage";
+
+
+
 const Home = () => {
+  const handlechange = () => {};
+  const handlesubmit = () => {};
   return (
     <div className="background">
       <br />
@@ -69,6 +76,7 @@ const Home = () => {
             <p>Coding ninjas make it happen . </p>
           </div>
           <div>
+            <br/>
             <div className="firstHexanosConatiner">
               <br />
               <div className="workinginFaang">
@@ -81,6 +89,7 @@ const Home = () => {
                 <div>Student started their own company.</div>
               </div>
             </div>
+            <br/>
             <div className="firstHexanosConatiner">
               <br />
               <div className="workinginFaang">
@@ -159,6 +168,134 @@ const Home = () => {
       </div>
       <br />
 
+
+      <div className = "dynamicRoutingHomePage">
+
+
+
+        <h2  className="text-align">A one stop platform </h2> 
+        <p className="text-align">Practice and learn till you are perfect</p>
+        
+     
+        <NavbarHomePage/>
+        <DynamicRoutesHomePage/>
+        <br/>
+
+
+
+
+      </div>
+
+
+
+
+<br />
+      <div className="fadedImage">
+
+        <img src="https://files.codingninjas.in/faded-expore-section-24216.svg" alt="" />
+      </div>
+      <div className="Queries">
+        <div>
+          <h3>Have any queries?</h3>
+
+          <p>Get a free counselling session from our experts</p>
+          <br />
+          <div className="contactSupport">
+            <div>
+              <img src="https://files.codingninjas.in/call-icon-9597.svg" alt="" />
+            </div>
+            
+
+            <div className="contactSupportHElpline" >
+              <p>Call us on our toll free number</p>
+              <h3>1800-123-3598</h3>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="fomrDiv">
+            <form className="fomrContainer">
+              <input
+                type="text"
+                name="contact-number"
+                placeholder="contact-number"
+                className="input-field input-szie"
+                onChange={handlechange}
+              />
+
+              <br />
+
+              <input
+                type="text"
+                name="name"
+                placeholder="name.........."
+                className="first-name input-szie"
+                onChange={handlechange}
+              />
+
+              <br />
+
+              <input
+                type="text"
+                name="email"
+                placeholder="email.........."
+                className="first-name input-szie"
+                onChange={handlechange}
+              />
+
+              <br />
+
+              <input
+                type="number"
+                name="graduation year"
+                placeholder="graduation - year"
+                className="first-name input-szie"
+                onChange={handlechange}
+              />
+              <br />
+
+              <button
+                type="submit"
+                className="Request_callback"
+                onClick={handlesubmit}
+              >
+                Request-Callback
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div className="vediosContainer">
+        <div className="vedioTag">
+          <iframe
+            width="420"
+            height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
+          ></iframe>
+        </div>
+
+        <div>
+          <div>
+            <img
+              src="https://files.codingninjas.in/newsx_small-5673.png"
+              alt=""
+            />
+          </div>
+          <h4>India Inc on Reviving Our Economy NewsX & BW Special</h4>
+          <div>
+            Ankush Singla, Co-Founder, Coding Ninjas joins a panel discussion
+            with other industry stalwarts to talk about the economy in the times
+            of COVID-19.
+          </div>
+        </div>
+      </div>
+
+      <h2 className="upcomingEvents">Upcoming Events </h2>
+
       <div className="logosTagfooter">
         <div className="logoCodingContainer">
           <img src={logoCoding} alt="" className="logoCoding" />
@@ -224,17 +361,21 @@ const Home = () => {
 
           <h2>Contact US</h2>
           <div className="conatcts">
-            <img
-              src="https://files.codingninjas.in/0000000000003251.png"
-              alt=""
-            />
+            <div>
+              <img
+                src="https://files.codingninjas.in/0000000000003251.png"
+                alt=""
+              />
+            </div>
             <p>1800-123-3598-0908</p>
           </div>
           <div className="eamil">
-            <img
-              src="https://files.codingninjas.in/0000000000003250.png"
-              alt=""
-            />
+            <div>
+              <img
+                src="https://files.codingninjas.in/0000000000003250.png"
+                alt=""
+              />
+            </div>
             <p>cotncodingninjas.com</p>
           </div>
         </div>
@@ -244,18 +385,18 @@ const Home = () => {
         <h2>Important Links</h2>
         <div>
           <span className="Links">CODING COURSES FOR BEGINNERS : </span>
-          <a href="">C++ Foundation with Data Structures   | </a> 
-          <a href="">JAVA Foundation with Data Structures   |</a>
+          <a href="">C++ Foundation with Data Structures | </a>
+          <a href="">JAVA Foundation with Data Structures |</a>
           <a href="">Interview Preparation for Product Companies |</a>
-          <a href="">Competitive Programming Course   |</a>
-          <a href="">Python Foundation with Data Structures    |</a>
+          <a href="">Competitive Programming Course |</a>
+          <a href="">Python Foundation with Data Structures |</a>
           <a href="">Aptitude Preparation Course</a>
 
           <br />
           <br />
 
-          <span className="Links">ADVANCED CODING COURSE:  </span>
-          <a href="">  Advanced Front-End Web Development with React |</a>
+          <span className="Links">ADVANCED CODING COURSE: </span>
+          <a href=""> Advanced Front-End Web Development with React |</a>
           <a href="">Machine Learning and Deep Learning Course |</a>
           <a href="">Full Stack Web Development Course |</a>
           <a href="">Data Science & Machine Learning Complete |</a>
@@ -263,10 +404,8 @@ const Home = () => {
           <a href="">System Design |</a>
           <a href="">Database Management System</a>
 
-
           <br />
           <br />
-
 
           <span className="Links">FREE TRIAL:</span>
           <a href="">Java Foundation with Data Structures |</a>
@@ -277,7 +416,6 @@ const Home = () => {
           <a href="">Data Science & Machine Learning Complete |</a>
           <a href="">Interview Preparation for Product Companies |</a>
           <a href="">Machine Learning Course</a>
-
 
           <br />
           <br />
@@ -290,45 +428,51 @@ const Home = () => {
           <a href="">Python Foundation with Data Structures |</a>
           <a href="">Advanced Front-End Web Development with React |</a>
           <a href="">Data Science & Machine Learning Complete |</a>
-          <a href="">
-Interview Preparation for Product Companies</a>
-
-
-          
-
-
-
-
-
-
-
-
-          
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
+          <a href="">Interview Preparation for Product Companies</a>
         </div>
       </div>
 
+      <br />
 
+      <div className="payment_logo">
+        <div>We accept payments using:</div>
+        <div>
+          <img src="https://files.codingninjas.in/visa-5604.png" alt="Error!" />
+        </div>
+        <div>
+          <img
+            src="https://files.codingninjas.in/paypal-5603.png"
+            alt="Error!"
+          />
+        </div>
+        <div>
+          <img src="https://files.codingninjas.in/upi-5602.png" alt="Error!" />
+        </div>
+        <div>
+          <img
+            src="https://files.codingninjas.in/no-cost-emi-5601.png"
+            alt="Error!"
+          />
+        </div>
+        <div>
+          <img
+            src="https://files.codingninjas.in/secure-5600.png"
+            alt="Error!"
+          />
+        </div>
+        <div>
+          <img
+            src="https://files.codingninjas.in/encryp-5599.png"
+            alt="Error!"
+          />
+        </div>
+        <div>
+          <img
+            src="https://files.codingninjas.in/razorpay-5598.png"
+            alt="Error!"
+          />
+        </div>
+      </div>
     </div>
   );
 };
