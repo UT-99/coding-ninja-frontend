@@ -4,7 +4,7 @@ import '../styles/Logo.css'
 const Logo = () => {
   return (
     
-      <img src={companyLogo} alt='image not found' className='logo'/>
+      <img src={companyLogo} alt='404 not found' className='logo'/>
     
   )
 }

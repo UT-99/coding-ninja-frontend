@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import '../styles/Navbar.css'
 import Logo from "./Logo";
@@ -7,15 +6,6 @@ import CareerCamp from "./CareerCamp";
 
 const Navbar = () => {
 
-  // const logofunction = () => {
-  //   console.log("Mouse over called ")
-  //     return (
-  //       <div>
-
-  //         <img src="./Assests/coding-ninjas-logo.jpg"></img>
-  //       </div>
-  //     )
-  // }
 
   return (
     <div id="navbar">
