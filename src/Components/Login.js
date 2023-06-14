@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     setFormError(validate(data))
 
-    axios.post('http://localhost:9000/login', data).then((res)=>{console.log("User Logged In"); alert(res.data.stuname)})
+    axios.post('http://localhost:9000/login', data).then((res)=>{console.log("User Logged In"); alert("welcome "+ res.data.stuname)})
     .catch((err)=>console.log(err));
     //navbar with my class roomoption then navigate to courses and then payment gateway .
     // add  

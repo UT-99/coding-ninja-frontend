@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Courses.css";
+import CoursesAdded from "./CoursesAdded";
+import '../styles/CoursesAdded.css'
 
 import logoCoding from "../../src/Assests/coding-ninjas-logo.jpg";
+import { useState } from "react";
+import axios from "axios";
 
 const Courses = () => {
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/courses")
+      .then((res) => {
+        console.log(res);
+        setCourses(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div>
       <div className="coursesContainer">
@@ -14,7 +29,6 @@ const Courses = () => {
         </p>
 
         <div className="buttonCotainer">
-          
           <button className="browse">Browse Popular Course</button>
           <button className="tryForFree">Try for Free</button>
         </div>
@@ -45,7 +59,7 @@ const Courses = () => {
         </div>
 
         <div className="cards">
-          <div >
+          <div>
             <img
               src="https://files.codingninjas.com/professional-24427.png"
               alt=""
@@ -54,15 +68,26 @@ const Courses = () => {
           <div>
             <h3>Having work Experince</h3>
           </div>
-          <div>Designed as per working proffesional  schedule</div>
+          <div>Designed as per working proffesional schedule</div>
         </div>
       </div>
 
-
       <div className="allcoursesImage">
-        <img src="https://files.codingninjas.in/faded-expore-section-24216.svg" alt="" />
+        <img
+          src="https://files.codingninjas.in/faded-expore-section-24216.svg"
+          alt=""
+        />
       </div>
       <br />
+
+      {console.log(courses)}
+
+     <div className="CousersConatinerFlex">
+     {courses &&
+        courses.map((ele) => {
+          return <CoursesAdded value={ele} />;
+        })}
+     </div>
 
       <div className="Tips">
         <div>
@@ -83,7 +108,10 @@ const Courses = () => {
 
           <div>
             <div className="display">
-              <img src="https://files.codingninjas.in/single-source-of-learning-icon-11483.svg" alt="" />
+              <img
+                src="https://files.codingninjas.in/single-source-of-learning-icon-11483.svg"
+                alt=""
+              />
               <h2 className="margin ">Single source of learning</h2>
             </div>
             <ul className="ulist">
@@ -103,8 +131,11 @@ const Courses = () => {
 
         <div className="tipsCardsContainer">
           <div>
-          <div className="display">
-              <img src="https://files.codingninjas.in/stay-motivated-till-end-icon-11484.svg" alt="" />
+            <div className="display">
+              <img
+                src="https://files.codingninjas.in/stay-motivated-till-end-icon-11484.svg"
+                alt=""
+              />
               <h2 className="margin ">Stay motivated till end </h2>
             </div>
             <ul className="ulist">
@@ -140,8 +171,11 @@ const Courses = () => {
           </div>
 
           <div>
-          <div className="display">
-              <img src="https://files.codingninjas.in/keey-coding-while-learning-icon-11482.svg" alt="" />
+            <div className="display">
+              <img
+                src="https://files.codingninjas.in/keey-coding-while-learning-icon-11482.svg"
+                alt=""
+              />
               <h2 className="margin ">Keep coding while learning</h2>
             </div>
             <ul className="ulist">
@@ -237,7 +271,6 @@ const Courses = () => {
                 alt=""
               />
               <div>
-                
                 <h2>No cost EMI</h2>
                 {/* <p>Get your money back within 7 days upon discontinuing a course</p> */}
               </div>
@@ -249,7 +282,6 @@ const Courses = () => {
                 alt=""
               />
               <div>
-                
                 <h2>Premium hirist account</h2>
                 {/* <p>Get a Premium Hirist Account on achieving more than 90% in any one of Data & Development, Interview Prep or Foundation courses</p> */}
               </div>
@@ -260,20 +292,14 @@ const Courses = () => {
         </div>
       </div>
 
-
       <br />
 
-
       <div className="alignment">
+        <h2>Ready To start learning ? </h2>
 
-          <h2>Ready To start learning ?  </h2>
-
-          <button className="backtocourse">Back to Courses</button>
-
+        <button className="backtocourse">Back to Courses</button>
       </div>
 
-
-      
       <div className="logosTagfooter">
         <div className="logoCodingContainer">
           <img src={logoCoding} alt="" className="logoCoding" />
@@ -361,27 +387,46 @@ const Courses = () => {
 
       <br />
 
-      
-
       <div className="ImportantLinksCotanier">
         <h2>Important Links</h2>
         <div>
           <span className="Links">CODING COURSES FOR BEGINNERS : </span>
-          <a href="https://www.codingninjas.com/">C++ Foundation with Data Structures | </a>
-          <a href="https://www.codingninjas.com/">JAVA Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Interview Preparation for Product Companies |</a>
-          <a href="https://www.codingninjas.com/">Competitive Programming Course |</a>
-          <a href="https://www.codingninjas.com/">Python Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Aptitude Preparation Course</a>
+          <a href="https://www.codingninjas.com/">
+            C++ Foundation with Data Structures |{" "}
+          </a>
+          <a href="https://www.codingninjas.com/">
+            JAVA Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Interview Preparation for Product Companies |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Competitive Programming Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Python Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Aptitude Preparation Course
+          </a>
 
           <br />
           <br />
 
           <span className="Links">ADVANCED CODING COURSE: </span>
-          <a href="https://www.codingninjas.com/"> Advanced Front-End Web Development with React |</a>
-          <a href="https://www.codingninjas.com/">Machine Learning and Deep Learning Course |</a>
-          <a href="https://www.codingninjas.com/">Full Stack Web Development Course |</a>
-          <a href="https://www.codingninjas.com/">Data Science & Machine Learning Complete |</a>
+          <a href="https://www.codingninjas.com/">
+            {" "}
+            Advanced Front-End Web Development with React |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Machine Learning and Deep Learning Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Full Stack Web Development Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Data Science & Machine Learning Complete |
+          </a>
           <a href="https://www.codingninjas.com/">Operating Systems |</a>
           <a href="https://www.codingninjas.com/">System Design |</a>
           <a href="https://www.codingninjas.com/">Database Management System</a>
@@ -390,34 +435,58 @@ const Courses = () => {
           <br />
 
           <span className="Links">FREE TRIAL:</span>
-          <a href="https://www.codingninjas.com/">Java Foundation with Data Structures |</a>
+          <a href="https://www.codingninjas.com/">
+            Java Foundation with Data Structures |
+          </a>
           <a href="https://www.codingninjas.com/">Competitive Course |</a>
-          <a href="https://www.codingninjas.com/">Aptitude Preparation Course |</a>
-          <a href="https://www.codingninjas.com/">Python Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Advanced Front-End Web Development with React |</a>
-          <a href="https://www.codingninjas.com/">Data Science & Machine Learning Complete |</a>
-          <a href="https://www.codingninjas.com/">Interview Preparation for Product Companies |</a>
+          <a href="https://www.codingninjas.com/">
+            Aptitude Preparation Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Python Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Advanced Front-End Web Development with React |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Data Science & Machine Learning Complete |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Interview Preparation for Product Companies |
+          </a>
           <a href="https://www.codingninjas.com/">Machine Learning Course</a>
 
           <br />
           <br />
 
           <span className="Links">FREE CONTENTS:</span>
-          <a href="https://www.codingninjas.com/">C++ Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Java Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Competitive Programming Course |</a>
-          <a href="https://www.codingninjas.com/">Aptitude Preparation Course |</a>
-          <a href="https://www.codingninjas.com/">Python Foundation with Data Structures |</a>
-          <a href="https://www.codingninjas.com/">Advanced Front-End Web Development with React |</a>
-          <a href="https://www.codingninjas.com/">Data Science & Machine Learning Complete |</a>
-          <a href="https://www.codingninjas.com/">Interview Preparation for Product Companies</a>
+          <a href="https://www.codingninjas.com/">
+            C++ Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Java Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Competitive Programming Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Aptitude Preparation Course |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Python Foundation with Data Structures |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Advanced Front-End Web Development with React |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Data Science & Machine Learning Complete |
+          </a>
+          <a href="https://www.codingninjas.com/">
+            Interview Preparation for Product Companies
+          </a>
         </div>
       </div>
 
-
-
-
-      
       <div className="payment_logo">
         <div>We accept payments using:</div>
         <div>

@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/Home.css";
+import { useState } from "react";
+import axios from "axios";
 
 import ladyLogo from "../../src/Assests/lady.jpg";
 import logoCoding from "../../src/Assests/coding-ninjas-logo.jpg";
@@ -11,8 +13,16 @@ import Slider from "./Slider";
 
 
 const Home = () => {
-  const handlechange = () => {};
-  const handlesubmit = () => {};
+
+  const [queryUser , setQueryUser ] = useState([])
+  const handlechange = (e) => {
+    setQueryUser({ ...queryUser, [e.target.name]: e.target.value });
+  };
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:9000/query', queryUser).then(res => {console.log("request Sended for queries")}).catch(err => {console.log(err)})
+    alert("We will callback you soon")
+  };
   return (
     <div className="background">
       <br />
@@ -224,11 +234,13 @@ const Home = () => {
 
         <div>
           <div className="fomrDiv">
+
+
             <form className="fomrContainer">
               <input
                 type="text"
-                name="contact-number"
-                placeholder="contact-number"
+                name="contact"
+                placeholder="contact"
                 className="input-field input-szie"
                 onChange={handlechange}
               />
@@ -257,7 +269,7 @@ const Home = () => {
 
               <input
                 type="number"
-                name="graduation year"
+                name="year"
                 placeholder="graduation - year"
                 className="first-name input-szie"
                 onChange={handlechange}
